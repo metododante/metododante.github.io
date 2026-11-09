@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodo Dante: l’Inferno — Leonardo Macrobio</title>
+<meta name="description" content="Un prof di religione, i suoi studenti e l’intera Commedia. Metodo Dante: l’Inferno di Leonardo Macrobio (Edizioni Epoké, 2026): nove canti letti come al bar, un bar dove però si dicono cose serie.">
+<meta property="og:title" content="Metodo Dante: l’Inferno — Leonardo Macrobio">
+<meta property="og:description" content="Un prof di religione, i suoi studenti e l’intera Commedia. Edizioni Epoké, 2026.">
+<meta property="og:image" content="https://metododante.it/anteprima.jpg">
+<meta property="og:url" content="https://metododante.it/">
+<meta property="og:type" content="book">
+<meta name="theme-color" content="#151b27">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23151b27'/%3E%3Cpath d='M16 5l2.6 7.4H26l-6 4.6 2.3 7.5L16 20l-6.3 4.5 2.3-7.5-6-4.6h7.4z' fill='%23e2c27a'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --notte:#151b27; --notte-2:#1c2433; --notte-3:#26304a;
+    --testo:#ece6da; --testo-2:#b9b2a5; --oro:#e2c27a; --oro-2:#f0d699;
+    --terra:#b8724d; --linea:rgba(226,194,122,.22);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--notte);color:var(--testo);font-family:var(--serif);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(1px 1px at 12% 18%,rgba(226,194,122,.55),transparent 60%),
+      radial-gradient(1px 1px at 78% 9%,rgba(226,194,122,.45),transparent 60%),
+      radial-gradient(1.5px 1.5px at 62% 31%,rgba(226,194,122,.35),transparent 60%),
+      radial-gradient(1px 1px at 33% 72%,rgba(226,194,122,.3),transparent 60%),
+      radial-gradient(1px 1px at 90% 64%,rgba(226,194,122,.35),transparent 60%),
+      radial-gradient(1200px 700px at 80% -10%,#202a3f,transparent 70%)}
+  main,footer{position:relative;z-index:1}
+  a{color:var(--oro)}
+  a:hover{color:var(--oro-2)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:56px;align-items:center;padding:72px 0 64px}
+  .copertina{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.06)}
+  .occhiello{font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);margin:0 0 14px}
+  h1{font-weight:600;font-size:clamp(38px,6vw,62px);line-height:1.04;margin:0 0 10px;letter-spacing:-.01em}
+  .autore-nome{font-style:italic;font-size:22px;color:var(--testo-2);margin:0 0 26px}
+  .lead{font-size:21px;margin:0 0 30px;max-width:34em}
+  .azioni{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .bottone{display:inline-block;font-family:var(--sans);font-weight:600;font-size:16px;text-decoration:none;padding:14px 22px;border-radius:6px;background:var(--oro);color:#1a1408}
+  .bottone:hover{background:var(--oro-2);color:#1a1408}
+  .nota-bottone{font-family:var(--sans);font-size:15px;color:var(--testo-2);margin:14px 0 0}
+  .altrove{font-family:var(--sans);font-size:15px;color:var(--testo-2);margin:22px 0 0}
+  .altrove a{color:var(--testo)}
+
+  /* sezioni */
+  section{padding:56px 0;border-top:1px solid var(--linea)}
+  h2{font-weight:600;font-size:30px;margin:0 0 22px}
+  .colonne{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  p{margin:0 0 18px}
+  blockquote{margin:28px 0;padding:4px 0 4px 22px;border-left:2px solid var(--terra);font-style:italic;color:var(--testo)}
+  .numeri{align-self:start;background:var(--notte-2);border:1px solid var(--linea);border-radius:8px;padding:22px 24px}
+  .numeri h3{font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);margin:0 0 12px;font-weight:600}
+  .cifra{font-size:46px;line-height:1;color:var(--oro);font-weight:600}
+  .numeri p{font-size:17px;color:var(--testo-2)}
+
+  /* presentazioni */
+  .eventi{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+  .evento{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:start;background:var(--notte-2);border:1px solid var(--linea);border-radius:8px;padding:20px 22px}
+  .data{text-align:center;font-family:var(--sans);border-right:1px solid var(--linea);padding-right:18px}
+  .data .g{display:block;font-size:34px;font-weight:700;color:var(--oro);line-height:1}
+  .data .m{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--testo-2);margin-top:6px}
+  .data .h{display:block;font-size:13px;color:var(--testo-2);margin-top:2px}
+  .evento h3{margin:0 0 4px;font-size:21px;font-weight:600}
+  .evento p{margin:0;font-size:17px;color:var(--testo-2)}
+  .nessun-evento{color:var(--testo-2);font-style:italic}
+
+  /* autore */
+  .autore{display:grid;grid-template-columns:160px 1fr;gap:32px;align-items:start}
+  .ritratto{width:160px;height:160px;border-radius:50%;object-fit:cover;border:1px solid var(--linea)}
+
+  /* scheda */
+  .scheda{font-family:var(--sans);font-size:15px;color:var(--testo-2);display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:8px}
+  .scheda b{color:var(--testo);font-weight:600}
+
+  footer{border-top:1px solid var(--linea);padding:34px 0 48px;font-family:var(--sans);font-size:15px;color:var(--testo-2)}
+  footer .riga{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  footer a{color:var(--testo)}
+
+  @media (max-width:760px){
+    body{font-size:18px}
+    .hero{grid-template-columns:1fr;gap:34px;padding:40px 0 44px}
+    .hero figure{max-width:260px;margin:0 auto}
+    .colonne{grid-template-columns:1fr;gap:24px}
+    .autore{grid-template-columns:1fr;gap:20px}
+    .ritratto{width:128px;height:128px}
+    .evento{grid-template-columns:72px 1fr;gap:14px;padding:16px}
+    .data{padding-right:12px}
+    .data .g{font-size:28px}
+    .lead{font-size:19px}
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="wrap">
+    <header class="hero">
+      <figure style="margin:0">
+        <img class="copertina" src="copertina.jpg" width="640" height="960" alt="Copertina di Metodo Dante: l’Inferno: Dante e Virgilio di spalle su un sentiero, sotto un cielo stellato (Gustave Doré, Inferno II)">
+      </figure>
+      <div>
+        <p class="occhiello">Edizioni Epoké · 2026</p>
+        <h1>Metodo Dante: l’Inferno</h1>
+        <p class="autore-nome">Leonardo Macrobio</p>
+        <p class="lead">Un prof di religione, i suoi studenti e l’intera Commedia. Nove canti dell’Inferno raccontati come al bar: un bar, però, dove si dicono cose serie.</p>
+        <div class="azioni">
+          <a class="bottone" href="mailto:libro@metododante.it?subject=Una%20copia%20di%20Metodo%20Dante%20con%20dedica">Una copia con dedica</a>
+        </div>
+        <p class="nota-bottone">Scrivi a <a href="mailto:libro@metododante.it">libro@metododante.it</a>: te la faccio avere io, con dedica, a 18 €.</p>
+        <p class="altrove">Anche in libreria, sul <a href="https://edizioniepoke.it/prodotto/metodo-dante-l-inferno/" rel="noopener">sito dell’editore</a> e su <a href="https://www.amazon.it/dp/B0HN5WLXFR" rel="noopener">Amazon</a>.</p>
+      </div>
+    </header>
+
+    <section id="libro">
+      <h2>Il libro</h2>
+      <div class="colonne">
+        <div>
+          <p>Non è un commento alla Commedia né un manuale di dantistica. È un metodo nato in classe: per anni, anche d’estate e fuori dall’orario scolastico, l’autore ha letto con i suoi studenti non qualche canto isolato, ma tutti e cento. Queste pagine sono la trascrizione rivista di quelle lezioni.</p>
+          <p>Il libro attraversa nove canti dell’Inferno, quelli in cui Dante compie un passo decisivo, e li fa diventare domande di oggi: la selva oscura è la difficoltà di chiedere aiuto, Ulisse è il desiderio di conoscere, le maschere sono la nostra identità.</p>
+          <blockquote>Nel testo si parla come al bar, un bar dove però si dicono cose serie. Nelle note si parla come in biblioteca, una biblioteca dove però non si dorme.</blockquote>
+          <p>La chiave di lettura è dichiaratamente cristiana e cattolica: non per convincere qualcuno, ma perché la Commedia non si comprende prescindendo dalla cultura in cui Dante viveva.</p>
+        </div>
+        <aside class="numeri" aria-label="La parola ai numeri">
+          <h3>La parola ai numeri</h3>
+          <p>Ogni capitolo si chiude contando le parole del canto, per lasciar parlare il testo da solo.</p>
+          <div class="cifra">212</div>
+          <p>volte compare «occhi», la parola significativa più frequente della Commedia.</p>
+          <div class="cifra">127</div>
+          <p style="margin-bottom:0">volte compare «Dio»: meno di «terra», meno di «amore».</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="presentazioni">
+      <h2>Le prossime presentazioni</h2>
+      <ul class="eventi" id="eventi">
+        <li class="evento" data-fine="2026-11-16T20:00">
+          <div class="data"><span class="g">16</span><span class="m">nov</span><span class="h">ore 18</span></div>
+          <div>
+            <h3>Alessandria</h3>
+            <p>Sala IRIS del Collegio Santa Chiara, via Volturno 18. Lunedì 16 novembre 2026.</p>
+          </div>
+        </li>
+        <li class="evento" data-fine="2026-12-12T19:30">
+          <div class="data"><span class="g">12</span><span class="m">dic</span><span class="h">ore 18</span></div>
+          <div>
+            <h3>San Salvatore Monferrato</h3>
+            <p>Biblioteca civica, nella rassegna «Suarè». Sabato 12 dicembre 2026, dalle 18 alle 19:30.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="nessun-evento" id="nessun-evento" hidden>Al momento non ci sono presentazioni in calendario. Se vuoi organizzarne una, scrivi a <a href="mailto:libro@metododante.it">libro@metododante.it</a>.</p>
+    </section>
+
+    <section id="autore">
+      <h2>L’autore</h2>
+      <div class="autore">
+        <img class="ritratto" src="autore.jpg" width="360" height="360" alt="Ritratto di Leonardo Macrobio">
+        <div>
+          <p>Leonardo Macrobio insegna religione cattolica all’IIS Umberto Eco di Alessandria. Prima ha insegnato per dodici anni alla Facoltà di Bioetica dell’Ateneo Pontificio Regina Apostolorum di Roma.</p>
+          <p>Non è un dantista. Ha letto la Commedia come si legge una lettera che qualcuno ha lasciato a chi viene dopo: non come un testo da studiare, ma come uno strumento per capire dove si trova.</p>
+          <p>Racconta Dante anche nei video di «Quattro passi col Prof»: <a href="https://www.youtube.com/@profmacrobio" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/profmacrobio/" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profmacrobio" rel="noopener">Facebook</a>.</p>
+        </div>
+      </div>
+      <div class="scheda" aria-label="Scheda del libro">
+        <span><b>Editore</b> Edizioni Epoké</span>
+        <span><b>Pagine</b> 202</span>
+        <span><b>Prezzo</b> € 18,00</span>
+        <span><b>ISBN</b> 979-12-82042-60-4</span>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="wrap riga">
+    <span>© 2026 Leonardo Macrobio · <a href="mailto:libro@metododante.it">libro@metododante.it</a></span>
+    <span>Copertina: Gustave Doré, Inferno II. Questo sito non usa cookie.</span>
+  </div>
+</footer>
+<script>
+  (function(){
+    var ora = new Date(), visibili = 0;
+    document.querySelectorAll('#eventi .evento').forEach(function(e){
+      var fine = new Date(e.getAttribute('data-fine'));
+      if (fine < ora) { e.remove(); } else { visibili++; }
+    });
+    if (!visibili) { document.getElementById('nessun-evento').hidden = false; }
+  })();
+</script>
+</body>
+</html>
