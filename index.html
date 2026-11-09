@@ -52,6 +52,7 @@
   .contatti a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--testo);font-family:var(--sans);font-size:15px;padding:8px 14px 8px 10px;border:1px solid var(--linea);border-radius:999px;background:var(--notte-2)}
   .contatti a:hover{border-color:var(--oro);color:var(--oro-2)}
   .contatti img{width:28px;height:28px;object-fit:contain;display:block}
+  .affiliato{font-family:var(--sans);font-size:13px;color:var(--testo-2);margin:10px 0 0}
   .nota-bottone{font-family:var(--sans);font-size:15px;color:var(--testo-2);margin:14px 0 0}
   .altrove{font-family:var(--sans);font-size:15px;color:var(--testo-2);margin:22px 0 0}
   .altrove a{color:var(--testo)}
@@ -76,6 +77,7 @@
   .data .h{display:block;font-size:13px;color:var(--testo-2);margin-top:2px}
   .evento h3{margin:0 0 4px;font-size:21px;font-weight:600}
   .evento p{margin:0;font-size:17px;color:var(--testo-2)}
+  .evento .locandina{margin-top:8px;font-family:var(--sans);font-size:15px}
   .nessun-evento{color:var(--testo-2);font-style:italic}
 
   /* autore */
@@ -89,7 +91,6 @@
   footer{border-top:1px solid var(--linea);padding:34px 0 48px;font-family:var(--sans);font-size:15px;color:var(--testo-2)}
   footer .riga{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   footer a{color:var(--testo)}
-  footer .affiliato{flex-basis:100%;font-size:14px}
 
   @media (max-width:760px){
     body{font-size:18px}
@@ -121,7 +122,8 @@
           <a class="bottone" href="mailto:libro@metododante.it?subject=Una%20copia%20di%20Metodo%20Dante%20con%20dedica">Una copia con dedica</a>
           <a class="bottone secondario" href="https://www.amazon.it/dp/B0HN5WLXFR?tag=profmacrobi0f-21" rel="noopener sponsored">Acquista su Amazon</a>
         </div>
-        <p class="nota-bottone">Scrivi a <a href="mailto:libro@metododante.it">libro@metododante.it</a>: te la faccio avere io, con dedica, a 18 €.</p>
+        <p class="affiliato">In qualità di Affiliato Amazon ricevo un guadagno dagli acquisti idonei.</p>
+        <p class="nota-bottone">Scrivi a <a href="mailto:libro@metododante.it">libro@metododante.it</a>: te la faccio avere io, con dedica.</p>
         <p class="altrove">Anche in libreria e sul <a href="https://edizioniepoke.it/prodotto/metodo-dante-l-inferno/" rel="noopener">sito dell’editore</a>.</p>
       </div>
     </header>
@@ -154,6 +156,7 @@
           <div>
             <h3>Alessandria</h3>
             <p>Sala IRIS del Collegio Santa Chiara, via Volturno 18. Lunedì 16 novembre 2026.</p>
+            <p class="locandina"><a href="locandina-2026-11-16-alessandria.jpg" target="_blank" rel="noopener">Guarda la locandina</a></p>
           </div>
         </li>
         <li class="evento" data-fine="2026-12-12T19:30">
@@ -196,7 +199,6 @@
   <div class="wrap riga">
     <span>© 2026 Leonardo Macrobio · <a href="mailto:libro@metododante.it">libro@metododante.it</a></span>
     <span>Copertina: Gustave Doré, Inferno II. Questo sito non usa cookie.</span>
-    <span class="affiliato">In qualità di Affiliato Amazon ricevo un guadagno dagli acquisti idonei.</span>
   </div>
 </footer>
 <script>
