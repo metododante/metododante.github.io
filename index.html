@@ -107,6 +107,17 @@
   .pallino{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--notte-3);cursor:pointer}
   .pallino[aria-selected="true"]{background:var(--oro)}
 
+  /* presentazioni passate */
+  .passata{margin:0 0 8px}
+  .passata h3{margin:0 0 4px;font-size:21px;font-weight:600}
+  .passata .dove{margin:0 0 16px;font-size:17px;color:var(--testo-2)}
+  .mosaico{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:10px;margin:0}
+  .mosaico a{display:block;overflow:hidden;border-radius:6px;border:1px solid var(--linea);background:var(--notte-2)}
+  .mosaico a:first-child{grid-row:1 / span 2}
+  .mosaico img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .mosaico a:hover img{transform:scale(1.03)}
+  .mosaico figcaption{grid-column:1 / -1;font-family:var(--sans);font-size:14px;color:var(--testo-2);margin-top:2px}
+
   footer{border-top:1px solid var(--linea);padding:34px 0 48px;font-family:var(--sans);font-size:15px;color:var(--testo-2)}
   footer .riga{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   footer a{color:var(--testo)}
@@ -122,6 +133,8 @@
     .data{padding-right:12px}
     .data .g{font-size:28px}
     .lead{font-size:19px}
+    .mosaico{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+    .mosaico a:first-child{grid-column:1 / -1;grid-row:auto}
     .recensione{padding:30px 22px 22px}
     .recensione::before{left:14px;font-size:70px}
   }
@@ -226,6 +239,20 @@
         </li>
       </ul>
       <p class="nessun-evento" id="nessun-evento" hidden>Al momento non ci sono presentazioni in calendario. Se vuoi organizzarne una, scrivi a <a href="mailto:libro@metododante.it">libro@metododante.it</a>.</p>
+    </section>
+
+    <section id="passate">
+      <h2>Le presentazioni passate</h2>
+      <!-- UNA SERATA = UN BLOCCO <article>. Tenere al massimo le ultime tre serate, due o tre foto ciascuna. -->
+      <article class="passata">
+        <h3>Alessandria, 16 novembre 2026</h3>
+        <p class="dove">Sala IRIS del Collegio Santa Chiara, con Zelia Pastore.</p>
+        <figure class="mosaico">
+          <a href="presentazioni/2026-11-16-sala.jpg" target="_blank" rel="noopener"><img src="presentazioni/2026-11-16-sala.jpg" width="1024" height="768" loading="lazy" alt="La sala IRIS del Collegio Santa Chiara piena di pubblico durante la presentazione"></a>
+          <a href="presentazioni/2026-11-16-tavolo.jpg" target="_blank" rel="noopener"><img src="presentazioni/2026-11-16-tavolo.jpg" width="1024" height="768" loading="lazy" alt="Leonardo Macrobio e Zelia Pastore al tavolo dei relatori"></a>
+          <a href="presentazioni/2026-11-16-dedica.jpg" target="_blank" rel="noopener"><img src="presentazioni/2026-11-16-dedica.jpg" width="1024" height="768" loading="lazy" alt="Leonardo Macrobio firma una copia del libro"></a>
+        </figure>
+      </article>
     </section>
 
     <section id="autore">
