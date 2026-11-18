@@ -88,6 +88,25 @@
   .scheda{font-family:var(--sans);font-size:15px;color:var(--testo-2);display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:36px;padding-top:18px;border-top:1px dashed var(--linea)}
   .scheda b{color:var(--testo);font-weight:600}
 
+  /* recensioni */
+  .carosello{position:relative}
+  .binario{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;align-items:flex-start;outline:none;overflow-y:hidden;transition:height .3s ease}
+  .binario::-webkit-scrollbar{display:none}
+  .recensione{flex:0 0 100%;scroll-snap-align:start;margin:0;background:var(--notte-2);border:1px solid var(--linea);border-radius:8px;padding:34px 36px 28px;position:relative}
+  .recensione::before{content:"\201C";position:absolute;top:-6px;left:22px;font-size:84px;line-height:1;color:var(--oro);opacity:.5;font-family:var(--serif)}
+  .recensione blockquote{margin:0;padding:0;border:0;font-style:normal}
+  .recensione blockquote p{margin:0 0 14px;max-width:44em}
+  .recensione figcaption{font-family:var(--sans);font-size:16px;color:var(--oro);margin-top:6px}
+  .recensione figcaption::before{content:"— "}
+  .comandi{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:20px}
+  .comandi[hidden]{display:none}
+  .freccia{width:44px;height:44px;border-radius:50%;border:1px solid var(--linea);background:var(--notte-2);color:var(--oro);font-size:26px;line-height:1;cursor:pointer;padding:0 0 3px}
+  .freccia:hover{border-color:var(--oro);color:var(--oro-2)}
+  .freccia:disabled{opacity:.35;cursor:default}
+  .pallini{display:flex;gap:10px}
+  .pallino{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--notte-3);cursor:pointer}
+  .pallino[aria-selected="true"]{background:var(--oro)}
+
   footer{border-top:1px solid var(--linea);padding:34px 0 48px;font-family:var(--sans);font-size:15px;color:var(--testo-2)}
   footer .riga{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   footer a{color:var(--testo)}
@@ -103,6 +122,8 @@
     .data{padding-right:12px}
     .data .g{font-size:28px}
     .lead{font-size:19px}
+    .recensione{padding:30px 22px 22px}
+    .recensione::before{left:14px;font-size:70px}
   }
 </style>
 </head>
@@ -146,6 +167,28 @@
           <div class="cifra">127</div>
           <p style="margin-bottom:0">volte compare «Dio»: meno di «terra», meno di «amore».</p>
         </aside>
+      </div>
+    </section>
+
+    <section id="recensioni">
+      <h2>Dicono del libro</h2>
+      <div class="carosello" aria-roledescription="carosello" aria-label="Recensioni dei lettori">
+        <div class="binario" id="binario" tabindex="0">
+
+          <!-- UNA RECENSIONE = UN BLOCCO <figure>. Per aggiungerne una: copia un blocco intero e cambia testo e firma. -->
+          <figure class="recensione">
+            <blockquote>
+              <p>Quando ho visto che avevi scritto un libro (mi sto impegnando per darti del tu…) non ho aspettato un secondo nel comprarlo e l’ho letto tutto di un fiato. A dire la verità (questa è una cosa che faccio spesso) sono partita dal fondo… e l’ultima frase mi ha colpito molto. Quando i nostri cammini si sono incrociati io non avevo nemmeno 14 anni, li avrei compiuti da lì a poco, e nemmeno sapevo cosa volesse dire “vedere le stelle” (in senso dantesco). Aprivo e chiudevo i libri ma le stelle nemmeno le contemplavo. Poi abbiamo iniziato il nostro percorso e piano piano si sono svelate, non tutte, ma qualcuna sì. Durante gli anni dell’università le stesse mi sembrava di averle viste, conosciute, “sapute”. Poi ci sono stati anni di nebbia… a vederli da qui ora la nebbia era davvero fittissima. Mentre ci ero dentro invece alcune cose non le vedevo. Adesso il cielo sta cercando di diventare più sereno, a tratti le stelle mi sembra di riuscire a vederle ancora… o perlomeno ho iniziato a ricordarmi che esistono. E che esisto anche io.</p>
+            </blockquote>
+            <figcaption>Anna F.</figcaption>
+          </figure>
+
+        </div>
+        <div class="comandi" id="comandi">
+          <button type="button" class="freccia" id="prec" aria-label="Recensione precedente">‹</button>
+          <div class="pallini" id="pallini" role="tablist" aria-label="Scegli la recensione"></div>
+          <button type="button" class="freccia" id="succ" aria-label="Recensione successiva">›</button>
+        </div>
       </div>
     </section>
 
@@ -217,6 +260,35 @@
       if (fine < ora) { e.remove(); } else { visibili++; }
     });
     if (!visibili) { document.getElementById('nessun-evento').hidden = false; }
+  })();
+</script>
+<script>
+  (function(){
+    var b = document.getElementById('binario'); if (!b) return;
+    var schede = b.querySelectorAll('.recensione');
+    var comandi = document.getElementById('comandi');
+    if (schede.length < 2) { comandi.hidden = true; return; }
+    var pallini = document.getElementById('pallini'), prec = document.getElementById('prec'), succ = document.getElementById('succ');
+    schede.forEach(function(s, i){
+      var p = document.createElement('button');
+      p.type = 'button'; p.className = 'pallino'; p.setAttribute('role','tab');
+      p.setAttribute('aria-label', 'Recensione ' + (i + 1) + ' di ' + schede.length);
+      p.addEventListener('click', function(){ vai(i); });
+      pallini.appendChild(p);
+    });
+    function attuale(){ return Math.round(b.scrollLeft / b.clientWidth); }
+    function vai(i){ b.scrollTo({ left: i * (schede[0].offsetWidth + 20) }); }
+    function aggiorna(){
+      var i = attuale();
+      pallini.querySelectorAll('.pallino').forEach(function(p, k){ p.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+      prec.disabled = i === 0; succ.disabled = i === schede.length - 1;
+      if (schede[i]) b.style.height = schede[i].offsetHeight + 'px';
+    }
+    prec.addEventListener('click', function(){ vai(attuale() - 1); });
+    succ.addEventListener('click', function(){ vai(attuale() + 1); });
+    b.addEventListener('scroll', function(){ window.requestAnimationFrame(aggiorna); });
+    window.addEventListener('resize', aggiorna);
+    aggiorna();
   })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7525bac09aac4f9e96c0a83e8e209bd6"}'></script><!-- End Cloudflare Web Analytics -->
