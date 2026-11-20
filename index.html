@@ -330,6 +330,37 @@
     b.addEventListener('scroll', function(){ window.requestAnimationFrame(aggiorna); });
     window.addEventListener('resize', aggiorna);
     aggiorna();
+
+    /* Scorrimento automatico: tempo proporzionale alla lunghezza del testo;
+       si ferma per sempre al primo gesto di chi legge; mai con «Riduci movimento»;
+       avanza solo se il carosello è sullo schermo e la pagina è in primo piano. */
+    var fermo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var visibile = false, timer = null;
+    function durata(i){
+      var parole = (schede[i].textContent || '').trim().split(/\s+/).length;
+      return Math.max(8000, Math.min(60000, 3000 + parole * 300));
+    }
+    function programma(){
+      clearTimeout(timer);
+      if (fermo || !visibile || document.hidden) return;
+      var i = attuale();
+      timer = setTimeout(function(){
+        vai(i + 1 < schede.length ? i + 1 : 0);
+        setTimeout(programma, 700);
+      }, durata(i));
+    }
+    function ferma(){ fermo = true; clearTimeout(timer); }
+    ['pointerdown','wheel','touchstart','keydown','focusin'].forEach(function(ev){
+      document.getElementById('binario').closest('.carosello').addEventListener(ev, ferma, { passive: true });
+    });
+    b.closest('.carosello').addEventListener('mouseenter', function(){ clearTimeout(timer); });
+    b.closest('.carosello').addEventListener('mouseleave', programma);
+    document.addEventListener('visibilitychange', programma);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(voci){
+        var v = voci[0]; visibile = v.isIntersecting && (v.intersectionRatio >= 0.5 || v.intersectionRect.height >= window.innerHeight * 0.5); programma();
+      }, { threshold: [0, 0.5, 1] }).observe(b);
+    }
   })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7525bac09aac4f9e96c0a83e8e209bd6"}'></script><!-- End Cloudflare Web Analytics -->
